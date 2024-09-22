@@ -1,5 +1,24 @@
 function minDate(dates) {
   //write you code here
+	dates.sort((a, b) => {
+    let arr1 = a.split("/").map(Number); // Convert to number for comparison
+    let arr2 = b.split("/").map(Number); // Fixed the typo here
+
+    // Compare year
+    if (arr1[0] !== arr2[0]) {
+      return arr1[0] - arr2[0];
+    }
+    // Compare month
+    if (arr1[1] !== arr2[1]) {
+      return arr1[1] - arr2[1];
+    }
+    // Compare day
+    return arr1[2] - arr2[2];
+  });
+  
+  // Return the minimum date (which will be the first after sorting)
+  return dates[0];
+	
 }
 
 // Do not change the code
